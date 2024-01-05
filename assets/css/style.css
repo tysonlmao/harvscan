@@ -1,0 +1,82 @@
+/* designed by tysonlmao.dev */
+:root {
+    --default-background: #331D2C;
+    --background-secondary: #3F2E3E;
+    --default-color: #EFE1D1;
+    --default-button-color: #1c1819;
+    --default-accent: #A78295;
+    --base-padding: 1.5rem;
+    --base-radius: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: var(--base-padding);
+    margin: 0 auto;
+    background-color: var(--default-background);
+    color: var(--default-color);
+}
+
+@media screen and (min-width: 900px) {
+    body {
+        max-width: 900px;
+        border: 1px solid white;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+    margin: 0;
+}
+
+/* utility classes */
+.h-100 {
+    min-height: 80vh;
+}
+
+.login-form {
+    min-width: 350px;
+}
+
+@media screen and (max-width: 900px) {
+    .login-form {
+        max-width: 50px;
+    }
+}
+
+.login-form > * {
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.nav-link {
+    color: var(--default-color);
+}
+
+
+/* form elements */
+input {
+    border: 2px solid var(--default-accent);
+    border-radius: var(--base-radius);
+    background-color: unset;
+    padding: 0.3rem;
+    color: var(--default-color);
+}
+
+label {
+    font-weight: 600;
+}
+
+input[type='submit'] {
+    background-color: var(--default-button-color);
+    border: none;
+    color: var(--default-color);
+}
+
+button {
+    background-color: var(--default-button-color);
+    border: none;
+    color: var(--default-color);
+}

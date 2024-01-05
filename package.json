@@ -1,0 +1,14 @@
+{
+  "name": "harvscan",
+  "version": "1.0.0",
+  "description": "A POS extension for the QOL of Harvey Norman employees",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "quagga": "^0.6.16"
+  }
+}
