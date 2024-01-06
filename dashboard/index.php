@@ -18,7 +18,9 @@ if ($_SESSION['cuid_role'] === "default") {
     <h2 class="fs-2">harvscan</h2>
     <p>Scan a barcode to begin</p>
     <main>
-        <div id="scanner-container"></div>
+        <div id="scanner-container">
+            <canvas class="drawingBuffer" style="display: none;"></canvas>
+        </div>
         <p id="barcode-result"></p>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"></script>
