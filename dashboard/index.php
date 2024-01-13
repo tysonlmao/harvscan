@@ -6,12 +6,13 @@ if (!isset($_SESSION['cuid'])) {
 }
 
 if ($_SESSION['cuid_role'] === "default") {
-    header('Location: ../index.php');
+    http_response_code(418);
+    header('Location: ../forbidden.php');
     exit();
 }
 ?>
 <?php include("../templates/header.php"); ?>
-<title>home</title>
+<title>dashboard</title>
 </head>
 
 <body>
@@ -24,49 +25,6 @@ if ($_SESSION['cuid_role'] === "default") {
         <p id="barcode-result"></p>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"></script>
-    <script>
-        navigator.mediaDevices.getUserMedia({
-            video: true
-        })
-        // Initialize QuaggaJS
-        Quagga.init({
-            inputStream: {
-                name: "Live",
-                type: "LiveStream",
-                target: document.querySelector('#scanner-container'),
-                constraints: {
-                    facingMode: "environment" // use the rear camera
-                }
-            },
-            decoder: {
-                decoder: {
-                    readers: [
-                        "code_128_reader",
-                        "ean_reader",
-                        "ean_8_reader",
-                        "code_39_reader",
-                        "code_39_vin_reader",
-                        "codabar_reader",
-                        "upc_reader",
-                        "upc_e_reader",
-                        "i2of5_reader"
-                    ]
-                }
-            }
-        }, function(err) {
-            if (err) {
-                console.error(err);
-                return;
-            }
-            Quagga.start();
-        });
-
-        Quagga.onDetected(function(data) {
-            document.querySelector('#barcode-result').textContent = data.codeResult.code;
-            document.querySelector('#scanner-container').style.display = 'none';
-            // Optionally, you can make an AJAX request to your server here
-            Quagga.stop();
-        });
-    </script>
+    <script src="../assets/js/barcode.js"></script>
     <?php include("../templates/footer.php"); ?>
 </body>
